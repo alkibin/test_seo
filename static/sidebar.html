@@ -1,0 +1,98 @@
+<div class="sidebar" data-expanded="false">
+    <div class="sidebar__header" data-expanded="false">
+        <div class="logo-container">
+            <a href="/" class="logo" data-expanded="false"
+            ><img
+                    width="54"
+                    height="23"
+                    src="/static/img/svg/logo.svg"
+                    alt="logo"
+            /> </a
+            ><a href="/" class="pre-logo" data-expanded="false"
+        ><img
+                width="16"
+                height="23"
+                src="/static/img/svg/pre-logo.svg"
+                alt="logo"
+        /></a>
+        </div>
+        <button
+                class="sidebar__collapse-btn btn-reset"
+                data-collapse="sidebar"
+                data-expanded="false"
+        >
+            <svg width="16" height="16">
+                <use href="/static/img/svg/sprite.svg#arrow_back"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="sidebar__body">
+        <ul class="menu list-reset">
+            <li>
+                <a href="#" class="menu-link" data-expanded="false"
+                ><svg width="20" height="20">
+                    <use href="/static/img/svg/sprite.svg#screen_search_desktop"></use>
+                </svg>
+                    <span>Аналитика проекта</span></a
+                >
+            </li>
+            <li>
+                <div
+                        class="dropdown"
+                        data-expanded="false"
+                        data-dropdown
+                        data-visible="false"
+                >
+                    <button
+                            class="dropdown__btn btn-reset"
+                            data-expanded="false"
+                            data-toggle
+                    >
+                        <svg width="20" height="20">
+                            <use href="/static/img/svg/sprite.svg#tool_with_arrows"></use>
+                        </svg>
+                        <span>Позиции из Я.Вебмастера</span>
+                        <svg class="dropdown__btn-icon" width="16" height="16">
+                            <use href="/static/img/svg/sprite.svg#arrow_dropdown"></use>
+                        </svg>
+                    </button>
+                    <ul
+                            class="dropdown__submenu list-reset"
+                            data-expanded="false"
+                            data-submenu
+                    >
+                        <li class="dropdown__item">
+                            <a href="#" class="dropdown__link"
+                            ><span>Запросы Я.Вебмастер</span></a
+                            >
+                        </li>
+                        <li class="dropdown__item">
+                            <a href="#" class="dropdown__link"
+                            ><span>URLs Я.Вебмастер</span></a
+                            >
+                        </li>
+                    </ul>
+                    <div class="dropdown__popup" data-expanded="false">
+                        <a href="#" class="dropdown__popup-link">Ключевые слова</a>
+                        <a href="#" class="dropdown__popup-link">URLs</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="menu-link" data-expanded="false"
+                ><svg width="20" height="20">
+                    <use href="/static/img/svg/sprite.svg#search_box"></use>
+                </svg>
+                    <span>Съем позиций (Live/XML)</span></a
+                >
+            </li>
+        </ul>
+        <div class="divider"></div>
+        <a href="#" class="menu-link" data-expanded="false"
+        ><svg width="20" height="20">
+            <use href="/static/img/svg/sprite.svg#grid_view"></use>
+        </svg>
+            <span>Мои проекты</span></a
+        >
+    </div>
+</div>

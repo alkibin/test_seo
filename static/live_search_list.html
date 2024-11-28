@@ -1,0 +1,799 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Региональная таблица</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href=" https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.css " rel="stylesheet">
+    <script src=" https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.js "></script>
+    <style>
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 30px 0;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 600px;
+            max-width: 100%;
+        }
+        .block {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .table th, .table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .add-button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-button:hover {
+            background-color: #218838;
+        }
+        .remove-button {
+            width: 20px;  /* Set width and height to create a square */
+            height: 20px;
+            display: inline-block;
+            background-color: #dc3545; /* Red background */
+            color: white;  /* White text for the cross */
+            text-align: center;
+            line-height: 20px;  /* Align the text vertically */
+            border-radius: 3px;  /* Slight rounding for a softer look */
+            cursor: pointer;
+            font-weight: bold;  /* Make the cross bold */
+            font-size: 16px;  /* Adjust font size */
+        }
+
+        .remove-button:hover {
+            background-color: #c82333;  /* Darker red on hover */
+            text-decoration: none;  /* Remove underline if any */
+        }
+        .update-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .update-button:hover {
+            background-color: #0056b3;
+        }
+        .new-entry {
+            display: none;
+            margin-top: 10px;
+            position: relative;
+        }
+        .new-entry input {
+            width: calc(100% - 45px);
+            padding: 8px;
+            margin-right: 10px;
+            position: relative;
+        }
+        .new-entry button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .new-entry button:hover {
+            background-color: #218838;
+        }
+        .autocomplete-container {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .autocomplete-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .autocomplete-item:hover {
+            background-color: #f0f0f0;
+        }
+        .list-name {
+            margin-bottom: 20px;
+            font-size: 36px;  /* Увеличиваем размер шрифта */
+            font-weight: bold;
+            text-align: center;
+            color: #333;  /* Добавляем цвет для улучшения контраста */
+        }
+        .loader {
+        position: fixed;
+        z-index: 9999;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 4px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 4px solid #3498db;
+        width: 50px;
+        height: 50px;
+        animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+        .toggle {
+            cursor: pointer;
+            display: inline-block;
+        }
+        .toggle-switch {
+            display: inline-block;
+            background: #ccc;
+            border-radius: 16px;
+            width: 32px;
+            height: 18px;
+            position: relative;
+            vertical-align: middle;
+            transition: background 0.25s;
+        }
+        .toggle-switch:before, .toggle-switch:after {
+            content: "";
+        }
+        .toggle-switch:before {
+            display: block;
+            background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: 3px;
+            left: 4px;
+            transition: left 0.25s;
+        }
+        .toggle:hover .toggle-switch:before {
+            background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+        }
+        .toggle-checkbox:checked + .toggle-switch {
+            background: #28a745;
+        }
+        .toggle-checkbox:checked + .toggle-switch:before {
+            left: 16px;
+        }
+
+        .toggle-checkbox {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .toggle-label {
+            position: relative;
+            top: 2px;
+        }
+
+        .day-btn {
+            aspect-ratio: 1;
+            color: #000;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            width: 7%;
+        }
+
+        .selected {
+            background: #007bff;
+            color: #fff !important;
+        }
+
+        .red-btn {
+            background-color: red;
+        }
+
+        .common-btn {
+            color: #000;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        .invisible {
+            visibility: hidden;
+        }
+        .visible {
+            visibility: visible;
+        }
+
+        nav.air-datepicker-nav {
+            display: none !important;
+        }
+        #scheduler-month-day-picker .air-datepicker-body--day-names {
+            display: none !important;
+        }
+        /* #scheduler-week-day-picker .air-datepicker-body--cells  {
+            display: none;
+        } */
+        #scheduler-week-day-picker .air-datepicker-body--day-names {
+            display: none;
+        }
+        #scheduler-week-day-picker   .-disabled- {
+            display: none !important;
+        }
+        #updates-scheduler-main-group {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<div class="content">
+
+    <!-- Выбор дней обновления -->
+    <div class="container">
+        <div class="block">
+            <label class="toggle">
+                <span class="toggle-label">Запланировать обновления</span>
+                <input class="toggle-checkbox" id="toggle-scheduler" type="checkbox"  >
+                <div class="toggle-switch"></div>
+            </label>
+            <div id="updates-scheduler-main-block" class="hidden">
+                <div id="updates-scheduler-main-group">
+                    <button id="scheduler-month-day-picker-toggle-btn" class="common-btn">Выбрать дни месяца</button>
+                    <button id="scheduler-week-day-picker-toggle-btn" class="common-btn">Выбрать дни недели</button>
+
+                    <div id="scheduler-month-day-picker" class="hidden" style="margin: 10px 0;"></div>
+                    <div id="scheduler-week-day-picker" class="hidden" style="margin: 10px 0;"></div>
+                    <div id="scheduler-time-picker" style="margin: 10px 0;"></div>
+                    <div style="margin: 10px 0;">
+                        <span>
+                            <b>Примечание:</b> время нужно указывать по <b>МСК</b>
+                        </span>
+                    </div>
+                </div>
+                <button id="save-updates-schedule-btn" class="common-btn selected" style="margin: 10px 0;">
+                    Сохранить
+                </button>
+            </div>
+        </div>
+
+        <!-- Название списка -->
+        <div class="list-name">{{ list_name }}</div>
+
+        <!-- Яндекс блок -->
+        <div class="block">
+            <h2>Yandex</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Регион</th>
+                        <th>Удалить</th>
+                        <th>Обновить</th>
+                    </tr>
+                </thead>
+                <tbody id="yandex-table-body">
+                    {% for region in yandex_list %}
+                    <tr> 
+                        <td>
+                        <a href="{{ url_for('get_live_search').include_query_params(list_id=region.list_id, search_system=region.search_system, lr_id=region.id) }}">
+                            {{ region_dict[region.lr] }}
+                        </a>
+                        </td>
+                        <td>
+                            <span class="remove-button" onclick="removeRegion('{{ region.list_id }}', '{{ region.lr }}', '{{ region.search_system }}')">×</span>
+                        </td>
+                        <td>
+                            <button class="update-button" onclick="UpdateList('{{ region.id }}')">Update</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button class="add-button" onclick="toggleNewEntryForm('yandex')">Добавить регион</button>
+            <div class="new-entry" id="yandex-new-entry">
+                <input type="text" id="yandex-region-input" placeholder="Введите регион" oninput="showSuggestions('yandex')">
+                <button onclick="addRegion('yandex')">Добавить</button>
+                <div id="yandex-suggestions" class="autocomplete-container"></div>
+            </div>
+        </div>
+
+        <!-- Google блок -->
+        <div class="block">
+            <h2>Google</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Регион</th>
+                        <th>Удалить</th>
+                        <th>Обновить</th>
+                    </tr>
+                </thead>
+                <tbody id="google-table-body">
+                    {% for region in google_list %}
+                    <tr>
+                        <td>
+                        <a href="{{ url_for('get_live_search').include_query_params(list_id=region.list_id, search_system=region.search_system, lr_id=region.id) }}">
+                            {{ region_dict[region.lr] }}
+                        </td>
+                        <td>
+                            <span class="remove-button" onclick="removeRegion('{{ region.list_id }}', '{{ region.lr }}', '{{ region.search_system }}')">×</span>
+                        </td>
+                        <td>
+                            <button class="update-button" onclick="UpdateList('{{ region.id }}')">Update</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button class="add-button" onclick="toggleNewEntryForm('google')">Добавить регион</button>
+            <div class="new-entry" id="google-new-entry">
+                <input type="text" id="google-region-input" placeholder="Введите регион" oninput="showSuggestions('google')">
+                <button onclick="addRegion('google')">Добавить</button>
+                <div id="google-suggestions" class="autocomplete-container"></div>
+            </div>
+        </div>
+    </div>
+    <div class="loader" style="display: none;"></div>
+    <script>
+        function showSuggestions(block) {
+            const inputId = block + '-region-input';
+            const suggestionsId = block + '-suggestions';
+            const input = document.getElementById(inputId);
+            const suggestionsContainer = document.getElementById(suggestionsId);
+            const query = input.value.toLowerCase();
+
+            suggestionsContainer.innerHTML = ''; // Очищаем контейнер с подсказками
+
+            let filteredRegions;
+
+            // Если поле ввода пустое, показываем все регионы
+            if (query.length === 0) {
+                filteredRegions = Object.keys(regionCodes);
+            } else {
+                // Фильтруем регионы, если есть введенный текст
+                filteredRegions = Object.keys(regionCodes).filter(region =>
+                    region.toLowerCase().includes(query)
+                );
+            }
+
+            filteredRegions.slice(0, 10).forEach(region => { // Ограничиваем количество подсказок до 10
+                const div = document.createElement('div');
+                div.textContent = region;
+                div.className = 'autocomplete-item';
+                div.onclick = function() {
+                    input.value = region;
+                    suggestionsContainer.innerHTML = ''; // Очищаем подсказки после выбора
+                };
+                suggestionsContainer.appendChild(div);
+            });
+
+            // Позиционирование контейнера с подсказками
+            const rect = input.getBoundingClientRect();
+            suggestionsContainer.style.top = `${rect.height}px`; // Сдвигаем подсказки вниз относительно поля ввода
+        }
+
+        function toggleNewEntryForm(block) {
+            const formId = block + '-new-entry';
+            const form = document.getElementById(formId);
+            form.style.display = form.style.display === 'none' || form.style.display === '' ? 'block' : 'none';
+
+            if (form.style.display === 'block') {
+                const inputId = block + '-region-input';
+                const input = document.getElementById(inputId);
+                input.focus();
+            }
+        }
+
+        function addRegion(block) {
+            const tableBodyId = block + '-table-body';
+            const inputId = block + '-region-input';
+            const regionInput = document.getElementById(inputId);
+            const region = regionInput.value.trim();
+
+            if (region) {
+                const regionCode = getRegionCode(region);
+
+                if (regionCode) {
+                    const url = "{{ url_for('add_lr_list') }}";
+
+                    fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            list_id: '{{ list_id }}',
+                            region_code: regionCode,
+                            search_system: block === 'yandex' ? 'Yandex' : 'Google'
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 200) { // Изменено на проверку data.status
+                            const tableBody = document.getElementById(tableBodyId);
+                            const newRow = document.createElement('tr');
+
+                            const regionCell = document.createElement('td');
+                            regionCell.textContent = region;
+                            newRow.appendChild(regionCell);
+
+                            const removeCell = document.createElement('td');
+                            const removeButton = document.createElement('span');
+                            removeButton.textContent = '×';
+                            removeButton.className = 'remove-button';
+                            removeButton.onclick = function() {
+                                tableBody.removeChild(newRow);
+                            };
+                            removeCell.appendChild(removeButton);
+                            newRow.appendChild(removeCell);
+
+                            const updateCell = document.createElement('td');
+                            const updateButton = document.createElement('button');
+                            updateButton.textContent = 'Update';
+                            updateButton.className = 'update-button';
+                            updateButton.onclick = function() {
+                                UpdateList('{{ list_id }}', regionCode, block === 'yandex' ? 'Yandex' : 'Google');
+                            };
+                            updateCell.appendChild(updateButton);
+                            newRow.appendChild(updateCell);
+
+                            tableBody.appendChild(newRow);
+                            regionInput.value = ''; // Очищаем поле ввода
+                            window.location.reload();
+                        } else {
+                            alert('Ошибка при добавлении региона: ' + data.message); // Выводим сообщение об ошибке
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Ошибка:', error);
+                    });
+                } else {
+                    alert('Неизвестный регион');
+                }
+            }
+        }
+
+        let regionCodes = {};
+
+        // Загружаем словарь регионов с бэка
+        fetch("{{ url_for('get_regions') }}")
+            .then(response => response.json())
+            .then(data => {
+                regionCodes = data; // Сохраняем словарь регионов в переменной
+                console.log('Загруженные регионы:', regionCodes); // Проверка, что данные загружены
+            })
+            .catch(error => console.error('Ошибка при загрузке регионов:', error));
+
+        function getRegionCode(region) {
+            console.log(regionCodes)
+            return regionCodes[region] || null;
+        }
+
+        async function removeRegion(list_id, lr, searchSystem) {
+            var url = "{{ url_for('delete_lr_list') }}"
+            if (confirm('Вы уверены, что хотите удалить этот регион?')) {
+                const response = await fetch(url, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ list_id: list_id, lr: lr, search_system: searchSystem })
+                });
+
+                if (response.ok) {
+                    // Remove row from table
+                    window.location.reload()
+                } else {
+                    alert('Ошибка при удалении записи.');
+                }
+            }
+        }
+
+        function UpdateList(list_lr_id) {
+    if (list_lr_id) {
+        // Show the loader
+        document.querySelector('.loader').style.display = 'block';
+
+        fetch('{{ url_for('load_live_search_list') }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ list_lr_id: list_lr_id })
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(err => Promise.reject(err));
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('List load:', data);
+            // Hide the loader
+            document.querySelector('.loader').style.display = 'none';
+            // Reload the page
+            window.location.reload();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            // Hide the loader
+            document.querySelector('.loader').style.display = 'none';
+            alert(`Error: ${error.error || 'Unable to load list.'}`);
+        });
+        } else {
+            alert('Error');
+        }
+    }
+
+        const listId = "{{ list_id }}"
+
+        class ToggleBtn {
+            constructor(btnId, elementToToggleId) {
+                this.button = document.getElementById(btnId)
+                this.elementToToggle = document.getElementById(elementToToggleId)
+                this.isHidden = this.elementToToggle.classList.contains("hidden")
+                this.button.addEventListener("click", () => this.toggle())
+            }
+            onShow(callback) {
+                this.onShowCallback = callback
+            }
+            onHide(callback) {
+                this.onShow = callback
+            }
+            hide() {
+                this.elementToToggle.classList.add("hidden")
+                this.button.classList.remove("selected")
+                this.isHidden = true
+            }
+            show() {
+                this.onShowCallback && this.onShowCallback()
+                this.elementToToggle.classList.remove("hidden")
+                this.button.classList.add("selected")
+                this.isHidden = false
+            }
+            toggle() {
+                this.isHidden ? this.show() : this.hide()
+            }
+        }
+
+        const UpdatesMode = {
+            Disabled: "Disabled",
+            MonthDays: "MonthDays",
+            WeekDays: "WeekDays",
+        }
+        const schedulerDates = new class {
+            data
+            updatesCheckbox
+            mode
+            selectMonthDaysBtn
+            selectWeekDaysBtn
+            #hours
+            #minutes
+            #timeZoneOffset
+            constructor() {
+                this.#hours = 0
+                this.#minutes = 0
+                this.weekDaysPicker = this.#setupWeekDaysPicker()
+                this.monthDaysPicker = this.#setupMonthDaysPicker()
+                this.timePicker = this.#setupTimePicker()
+                this.selectMonthDaysBtn = new ToggleBtn("scheduler-month-day-picker-toggle-btn", "scheduler-month-day-picker")
+                this.selectWeekDaysBtn = new ToggleBtn("scheduler-week-day-picker-toggle-btn", "scheduler-week-day-picker")
+                this.schedulerMainBlock = document.getElementById("updates-scheduler-main-block")
+                this.updatesCheckbox = document.getElementById("toggle-scheduler")
+                this.updatesCheckbox.addEventListener("change", (event) => {
+                    if (this.updatesCheckbox.checked) {
+                        this.schedulerMainBlock.classList.remove("hidden")
+                    } else {
+                        this.schedulerMainBlock.classList.add("hidden")
+                    }
+                })
+                this.submitBtn = document.getElementById("save-updates-schedule-btn")
+                this.submitBtn.addEventListener("click", () => {
+                    if(confirm("Вы уверены, что хотете сохранить изменения?"))
+                        return this.save()
+                })
+                this.#setupSelectButtons()
+                this.#loadUpdatesSchedule()
+            }
+            #setupSelectButtons() {
+                this.selectMonthDaysBtn.onShow(() => {
+                    this.mode = UpdatesMode.MonthDays
+                    this.selectWeekDaysBtn.hide()
+                })
+                this.selectWeekDaysBtn.onShow(() => {
+                    this.mode = UpdatesMode.WeekDays
+                    this.selectMonthDaysBtn.hide()
+                })
+            }
+            #loadUpdatesSchedule() {
+                fetch(`/admin/list_menu/${listId}/updates_schedule`)
+                .then(response => response.json())
+                .then(data => {
+                    if(!data) {
+                        this.updatesCheckbox.checked = false;
+                        return
+                    }
+                    this.data = data
+                    const isDisabled = UpdatesMode.Disabled === this.data.mode
+                    this.updatesCheckbox.checked = !isDisabled;
+                    if(!isDisabled) {
+                        this.schedulerMainBlock.classList.remove("hidden")
+                        this.timePicker.selectDate(new Date(`1 Juli 2024 ${data.hours}:${data.minutes}`), {updateTime: true})
+                        if(this.data.mode == UpdatesMode.WeekDays) {
+                            this.selectWeekDaysBtn.show()
+                            this.data.days.forEach(day => {
+                                if (day < 0 || day > 6) return
+                                this.weekDaysPicker.selectDate(new Date(`${day + 1} Juli 2024`))
+                            });
+                        }
+                        if (this.data.mode == UpdatesMode.MonthDays) {
+                            this.selectMonthDaysBtn.show()
+                            this.data.days.forEach(day => {
+                                if (day < 1 || day > 31) return
+                                this.monthDaysPicker.selectDate(new Date(`${day} Juli 2024`))
+                            });
+                        }
+                    }
+
+                })
+                .catch(error => console.error('Ошибка при загрузки расписания обновлений:', error))
+            }
+            #setupWeekDaysPicker() {
+                const picker = new AirDatepicker('#scheduler-week-day-picker', {
+                    multipleDates: true,
+                    startDate: "1 Juli 2024",
+                    weekends: [],
+                    view: "days",
+                    showOtherMonths: false,
+                    selectOtherMonths: false,
+                    onRenderCell({date, cellType}) {
+                        const isDay = cellType === 'day'
+                        return {
+                            html: isDay ? date.toLocaleString("ru", {weekday: "short"}) : undefined,
+                        }
+                    },
+                })
+                picker.disableDate(Array.from({length: 31 - 7, }, (_, i) => {
+                    return new Date(`${i+1+7} Juli 2024`)
+                }))
+                return picker
+            }
+            #setupMonthDaysPicker() {
+                return new AirDatepicker('#scheduler-month-day-picker', {
+                    multipleDates: true,
+                    startDate: "01 Juli 2024",
+                    weekends: [],
+                    view: "days",
+                    showOtherMonths: false,
+                    selectOtherMonths: false,
+                    buttons: ["clear"],
+                    dateFormat(date) {
+                        return date.toLocaleString()
+                    },
+                })
+            }
+            #setupTimePicker() {
+                const timePicker = new AirDatepicker("#scheduler-time-picker", {
+                    // picked month which contains 31 days and starts from monday
+                    startDate: "01.01.2024 00:00",
+                    inline: true,
+                    timepicker: true,
+                    minutesStep: 1,
+                    onlyTimepicker: true,
+                    onSelect: ({date, formattedDate, datepicker}) => {
+                        this.#hours = date.getHours()
+                        this.#timeZoneOffset = date.getTimezoneOffset()
+                        this.#minutes = date.getMinutes()
+                    }
+                })
+                return timePicker
+            }
+            #getWeekDaysScheduleRequest() {
+                let timeInMinutes = this.#hours
+                let daysOffset = 0
+                return {
+                    days: this.weekDaysPicker.selectedDates.map(date => {
+                        return date.getDate()
+                    }),
+                    mode: UpdatesMode.WeekDays,
+                    hours: this.#hours,
+                    minutes: this.#minutes,
+                }
+            }
+            #getMonthDaysScheduleRequest() {
+                return {
+                    days: this.monthDaysPicker.selectedDates.map(date => {
+                        return date.getDate()
+                    }),
+                    mode: UpdatesMode.MonthDays,
+                    hours: this.#hours,
+                    minutes: this.#minutes,
+                }
+            }
+            #getDisabledMoreRequest() {
+                return {
+                    mode: UpdatesMode.Disabled,
+                }
+            }
+            save() {
+                let request
+                if (this.mode == UpdatesMode.Disabled){
+                    request = this.#getDisabledMoreRequest()
+                }
+                if (this.mode == UpdatesMode.WeekDays){
+                    request = this.#getWeekDaysScheduleRequest()
+                }
+                if (this.mode == UpdatesMode.MonthDays){
+                    request = this.#getMonthDaysScheduleRequest()
+                }
+                fetch(`/admin/list_menu/${listId}/updates_schedule`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(request)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(err => Promise.reject(err));
+                    }
+                })
+            }
+        }
+        const schedulerToggler = document.getElementById("toggle-scheduler")
+        schedulerToggler.addEventListener("click", (e) => {
+            if(!schedulerToggler.checked){
+                if (confirm("Вы уверены, что хотете отключить автообновления?")){
+                    schedulerDates.mode = UpdatesMode.Disabled
+                    schedulerDates.save()
+                } else {
+                    e.preventDefault()
+                }
+            }
+        })
+        schedulerToggler.addEventListener("change", (e) => {
+            !schedulerToggler.checked && (schedulerDates.mode = schedulerToggler.inputMode.Disabled)
+        })
+
+
+    </script>
+
+</div>
+{% endblock %}

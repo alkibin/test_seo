@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    
+    <title>Webpack React App</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="popup-background">
+        <div class="pop-project">
+          <div class="pop-project__exit">
+            <svg
+              class="pop-project__exit-button"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <mask
+                id="mask0_139_1790"
+                style="mask-type: alpha"
+                maskUnits="userSpaceOnUse"
+                x="0"
+                y="0"
+                width="24"
+                height="25"
+              >
+                <rect y="0.5" width="24" height="24" fill="white" />
+              </mask>
+              <g mask="url(#mask0_139_1790)">
+                <path
+                  d="M6.4 19.5L5 18.1L10.6 12.5L5 6.9L6.4 5.5L12 11.1L17.6 5.5L19 6.9L13.4 12.5L19 18.1L17.6 19.5L12 13.9L6.4 19.5Z"
+                  fill="#BBBBBB"
+                />
+              </g>
+            </svg>
+          </div>
+          <div class="pop-project__title">Создание нового проекта</div>
+          <div class="pop-project__sub">Подключите проект через Я.Вебмастер</div>
+          <div class="pop-project__sure">
+            <svg
+              width="20"
+              height="21"
+              viewBox="0 0 20 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <mask
+                id="mask0_2003_1914"
+                style="mask-type: alpha"
+                maskUnits="userSpaceOnUse"
+                x="0"
+                y="0"
+                width="20"
+                height="21"
+              >
+                <rect y="0.5" width="20" height="20" fill="#D9D9D9" />
+              </mask>
+              <g mask="url(#mask0_2003_1914)">
+                <path
+                  d="M10.4993 14.1993C10.3656 14.3329 10.2015 14.4 10 14.4C9.79852 14.4 9.63437 14.3329 9.50071 14.1993C9.36706 14.0656 9.3 13.9015 9.3 13.7C9.3 13.4985 9.36706 13.3344 9.50071 13.2007C9.63437 13.0671 9.79852 13 10 13C10.2015 13 10.3656 13.0671 10.4993 13.2007C10.6329 13.3344 10.7 13.4985 10.7 13.7C10.7 13.9015 10.6329 14.0656 10.4993 14.1993ZM10.7 11.2H9.3V6.6H10.7V11.2ZM10 18.4C8.90635 18.4 7.87989 18.1925 6.91962 17.7782C5.95741 17.363 5.12141 16.8 4.41071 16.0893C3.70001 15.3786 3.13702 14.5426 2.72182 13.5804C2.30745 12.6201 2.1 11.5937 2.1 10.5C2.1 9.40635 2.30745 8.37989 2.72182 7.41962C3.13702 6.45741 3.70001 5.62141 4.41071 4.91071C5.12141 4.20001 5.95741 3.63702 6.91962 3.22182C7.87989 2.80745 8.90635 2.6 10 2.6C11.0937 2.6 12.1201 2.80745 13.0804 3.22182C14.0426 3.63702 14.8786 4.20001 15.5893 4.91071C16.3 5.62141 16.863 6.45741 17.2782 7.41962C17.6925 8.37989 17.9 9.40635 17.9 10.5C17.9 11.5937 17.6925 12.6201 17.2782 13.5804C16.863 14.5426 16.3 15.3786 15.5893 16.0893C14.8786 16.8 14.0426 17.363 13.0804 17.7782C12.1201 18.1925 11.0937 18.4 10 18.4ZM10 17C11.8126 17 13.3516 16.3699 14.6107 15.1107C15.8699 13.8516 16.5 12.3126 16.5 10.5C16.5 8.68737 15.8699 7.14844 14.6107 5.88929C13.3516 4.63014 11.8126 4 10 4C8.18737 4 6.64844 4.63014 5.38929 5.88929C4.13014 7.14844 3.5 8.68737 3.5 10.5C3.5 12.3126 4.13014 13.8516 5.38929 15.1107C6.64844 16.3699 8.18737 17 10 17Z"
+                  fill="#0076F5"
+                  stroke="#F2F8FE"
+                  stroke-width="0.2"
+                />
+              </g>
+            </svg>
+            <div class="pop-project__sute-text">
+              Убедитесь, что вы авторизованы в
+              <a href="#" class="link">аккаунте Яндекс</a> </br>и у вас создано
+              приложение. Подробная
+              <a href="#" class="link">видео-инструкция</a> по созданию
+              приложения.
+            </div>
+          </div>
+              <label
+                for="light-switch"
+                class="gui-switch gui-switch--mb gui-switch-popup"
+              >
+                Автоматически
+                <input type="checkbox" role="switch" id="light-switch" class="pop-variable"/>
+              </label>
+          <form id="project-form-auto-f" class="project-form project-form-auto-f active">
+            <div class="input-title">Access token</div>
+            <input
+              name="Accesstoken"
+              type="text"
+              class="input input--mb"
+              placeholder="Введите данные из Я.Вебмастера 
+              "
+            />
+            <div class="input-title">User ID</div>
+            <input
+             name="UserID"
+              type="text"
+              class="input input--mb"
+              placeholder="Введите данные из Я.Вебмастера 
+              "
+            />
+            <div class="input-title">Host ID</div>
+            <input
+              name="HostID"
+              type="text"
+              class="input"
+              placeholder="Введите данные из Я.Вебмастера 
+              "
+            />
+            <div class="pop-project__buttons">
+              <button type="submit" class="blue-button blue-button--mr btn-reset">Подключить</button>
+              <div class="transparent-button pop-project__exit-button">Отменить</div>
+            </div>
+          </form>
+          <form id="project-form-auto-t" class="project-form project-form-auto-t">
+            <div class="input-title">
+              <span>Client ID</span>
+              <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.59929 12.9393C8.42521 13.1134 8.21419 13.2 7.96 13.2C7.70581 13.2 7.49479 13.1134 7.32071 12.9393C7.14663 12.7652 7.06 12.5542 7.06 12.3C7.06 12.0458 7.14663 11.8348 7.32071 11.6607C7.49479 11.4866 7.70581 11.4 7.96 11.4C8.21419 11.4 8.42521 11.4866 8.59929 11.6607C8.77337 11.8348 8.86 12.0458 8.86 12.3C8.86 12.5542 8.77337 12.7652 8.59929 12.9393ZM8.62087 10.12H7.34047C7.34662 9.46904 7.41355 9.0365 7.52944 8.80472C7.58993 8.68376 7.70593 8.52682 7.88377 8.33252C8.06038 8.13955 8.29391 7.91407 8.58521 7.65583C8.83101 7.45083 9.03704 7.22781 9.20247 6.98655C9.37316 6.73764 9.46 6.46811 9.46 6.18C9.46 5.87176 9.34165 5.59173 9.1138 5.34252C8.87557 5.08196 8.5245 4.96 8.08 4.96C7.58038 4.96 7.19113 5.10644 6.93318 5.41598C6.7268 5.66363 6.57983 5.901 6.49745 6.12788L5.36618 5.68223C5.55125 5.17862 5.86001 4.74359 6.29455 4.37638C6.746 3.99487 7.33808 3.8 8.08 3.8C8.80772 3.8 9.43318 3.99453 9.96095 4.3807C10.479 4.75975 10.74 5.30145 10.74 6.02C10.74 6.44449 10.6437 6.80169 10.4557 7.0962C10.2608 7.40153 9.99289 7.72558 9.65032 8.06826C9.1843 8.50777 8.88589 8.8674 8.77699 9.14328C8.67849 9.3928 8.62797 9.71997 8.62087 10.12ZM8 16.4C6.90635 16.4 5.87989 16.1925 4.91962 15.7782C3.95741 15.363 3.12141 14.8 2.41071 14.0893C1.70001 13.3786 1.13702 12.5426 0.721817 11.5804C0.307452 10.6201 0.1 9.59365 0.1 8.5C0.1 7.40635 0.307452 6.37989 0.721817 5.41962C1.13702 4.45741 1.70001 3.62141 2.41071 2.91071C3.12141 2.20001 3.95741 1.63702 4.91962 1.22182C5.87989 0.807452 6.90635 0.6 8 0.6C9.09365 0.6 10.1201 0.807452 11.0804 1.22182C12.0426 1.63702 12.8786 2.20001 13.5893 2.91071C14.3 3.62141 14.863 4.45741 15.2782 5.41962C15.6925 6.37989 15.9 7.40635 15.9 8.5C15.9 9.59365 15.6925 10.6201 15.2782 11.5804C14.863 12.5426 14.3 13.3786 13.5893 14.0893C12.8786 14.8 12.0426 15.363 11.0804 15.7782C10.1201 16.1925 9.09365 16.4 8 16.4ZM8 15C9.81263 15 11.3516 14.3699 12.6107 13.1107C13.8699 11.8516 14.5 10.3126 14.5 8.5C14.5 6.68737 13.8699 5.14844 12.6107 3.88929C11.3516 2.63014 9.81263 2 8 2C6.18737 2 4.64844 2.63014 3.38929 3.88929C2.13014 5.14844 1.5 6.68737 1.5 8.5C1.5 10.3126 2.13014 11.8516 3.38929 13.1107C4.64844 14.3699 6.18737 15 8 15Z" fill="#BBBBBB" stroke="white" stroke-width="0.2" />
+              </svg>
+            </div>
+            <input
+              type="text"
+              class="input"
+              placeholder="Введите данные из Я.Вебмастера 
+              "
+            />
+            <div class="pop-project__buttons">
+              <button type="submit" class="blue-button blue-button--mr btn-reset">Подключить</button>
+              <div class="transparent-button pop-project__exit-button">Отменить</div>
+            </div>
+          </form>
+          <form id="project-form-new-project" class="project-form project-form-new-project">
+            <div class="input-title">Проект для подключения</div>
+            <div class="search-folders search-folders-menu">
+              <div class="select-btn select-folders-btn btn-reset">
+                <span>Выберите проект из списка</span>
+                <svg class="project__btn-icon" width="16" height="16">
+                  <use href="./img/svg/sprite.svg#arrow_dropdown"></use>
+                </svg>
+              </div>
+              <div class="search__dropdown-wrapper">
+                <div class="project__dropdown">
+                  <div class="folder" data-visible="false">
+                    <div class="folder__btn btn-reset" >
+                      <span>Проект 1</span>
+                    </div>
+                  </div>
+                  <div class="folder" data-visible="false">
+                    <div class="folder__btn btn-reset" >
+                      <span>Проект 2</span>
+                    </div>
+                  </div>
+                  <div class="folder" data-visible="false">
+                    <div class="folder__btn btn-reset" >
+                      <span>Проект 3</span>
+                    </div>
+                  </div>
+                  <div class="folder" data-visible="false">
+                    <div class="folder__btn btn-reset" >
+                      <span>Проект 4</span>
+                    </div>
+                  </div>
+                  <div class="folder" data-visible="false">
+                    <div class="folder__btn btn-reset" >
+                      <span>Проект 5</span>
+                    </div>
+                  </div>
+                  <div class="folder" data-visible="false">
+                    <div class="folder__btn btn-reset" >
+                      <span>Проект 6</span>
+                    </div>
+                  </div>
+                  <div class="folder" data-visible="false">
+                    <div class="folder__btn btn-reset" >
+                      <span>Проект 7</span>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input-title">Название</div>
+            <input
+              type="text"
+              class="input input--mb"
+              placeholder="Введите название проекта 
+              "
+            />
+            <div class="input-title">Папка проекта</div>
+            <div class="search-folders search-projects-menu">
+              <div class="select-btn select-project-btn btn-reset">
+                <span>Выберите или создайте папку для проекта</span>
+                <svg class="project__btn-icon" width="16" height="16">
+                  <use href="./img/svg/sprite.svg#arrow_dropdown"></use>
+                </svg>
+              </div>
+              <div class="search__dropdown-wrapper">
+                <div class="project__dropdown">
+                  <div class="search__folders-wrap">
+                    <div class="folder" data-visible="false">
+                      <div class="folder__btn btn-reset" >
+                        <span>Папка 1</span>
+                      </div>
+                    </div>
+                    <div class="folder" data-visible="false">
+                      <div class="folder__btn btn-reset" >
+                        <span>Папка 2</span>
+                      </div>
+                    </div>
+                    <div class="folder" data-visible="false">
+                      <div class="folder__btn btn-reset" >
+                        <span>Папка 3</span>
+                      </div>
+                    </div>
+                  </div>
+                 
+                  <div class="btn btn-reset btn-new-folder active">
+                    <svg width="24" height="24">
+                      <use href="./img/svg/sprite.svg#add"></use>
+                    </svg>
+                    <span class="btn-new-folder-text">Новая папка</span>
+                  </div>
+                  <div class="add-folder">
+                    <input
+                    type="text"
+                    class="input add-folder-name"
+                    placeholder="Введите название  
+                    "
+                    />
+                    <div class="btn btn-reset btn-create-folder-pop">
+                      <svg width="24" height="24">
+                        <use href="./img/svg/sprite.svg#add"></use>
+                      </svg>
+                      <span class="btn-new-folder-text">Создать</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pop-project__buttons">
+              <button type="submit" class="blue-button blue-button--mr btn-reset">Сохранить</button>
+              <div class="transparent-button pop-project__exit-button">Отменить</div>
+            </div>
+          </form>
+          <div class="accept-popup">
+              <div class="accept-banner">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.95071 9.51071L11.4 5.06142L12.3786 6.04L6.88 11.5386L3.62142 8.28L4.6 7.30142L6.80929 9.51071L6.88 9.58142L6.95071 9.51071ZM8 15.9C6.90635 15.9 5.87989 15.6925 4.91962 15.2782C3.95741 14.863 3.12141 14.3 2.41071 13.5893C1.70001 12.8786 1.13702 12.0426 0.721817 11.0804C0.307452 10.1201 0.1 9.09365 0.1 8C0.1 6.90635 0.307452 5.87989 0.721817 4.91962C1.13702 3.95741 1.70001 3.12141 2.41071 2.41071C3.12141 1.70001 3.95741 1.13702 4.91962 0.721817C5.87989 0.307452 6.90635 0.1 8 0.1C9.09365 0.1 10.1201 0.307452 11.0804 0.721817C12.0426 1.13702 12.8786 1.70001 13.5893 2.41071C14.3 3.12141 14.863 3.95741 15.2782 4.91962C15.6925 5.87989 15.9 6.90635 15.9 8C15.9 9.09365 15.6925 10.1201 15.2782 11.0804C14.863 12.0426 14.3 12.8786 13.5893 13.5893C12.8786 14.3 12.0426 14.863 11.0804 15.2782C10.1201 15.6925 9.09365 15.9 8 15.9ZM8 14.5C9.81263 14.5 11.3516 13.8699 12.6107 12.6107C13.8699 11.3516 14.5 9.81263 14.5 8C14.5 6.18737 13.8699 4.64844 12.6107 3.38929C11.3516 2.13014 9.81263 1.5 8 1.5C6.18737 1.5 4.64844 2.13014 3.38929 3.38929C2.13014 4.64844 1.5 6.18737 1.5 8C1.5 9.81263 2.13014 11.3516 3.38929 12.6107C4.64844 13.8699 6.18737 14.5 8 14.5Z" fill="#009906" stroke="white" stroke-width="0.2" />
+                </svg>
+                <span>Проект успешно подключен</span>
+              </div>
+              <div class="pop-project__buttons">
+                <button type="submit" class="blue-button blue-button--mr btn-reset pop-project__exit-button">Завершить</button>
+                <div class="red-button">Отключить</div>
+              </div>
+          </div>
+        </div>
+      </div>
+     
+      <div class="sidebar" data-expanded="false">
+        <div class="sidebar__header" data-expanded="false">
+          <div class="logo-container">
+            <a href="/" class="logo" data-expanded="false"
+              ><img
+                width="54"
+                height="23"
+                src="./img/svg/logo.svg"
+                alt="logo"
+              /> </a
+            ><a href="/" class="pre-logo" data-expanded="false"
+              ><img
+                width="16"
+                height="23"
+                src="./img/svg/pre-logo.svg"
+                alt="logo"
+            /></a>
+          </div>
+          <button
+            class="sidebar__collapse-btn btn-reset"
+            data-collapse="sidebar"
+            data-expanded="false"
+          >
+            <svg width="16" height="16">
+              <use href="./img/svg/sprite.svg#arrow_back"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="sidebar__body">
+          <ul class="menu list-reset">
+            <li>
+              <a href="#" class="menu-link" data-expanded="false"
+                ><svg width="20" height="20">
+                  <use href="./img/svg/sprite.svg#screen_search_desktop"></use>
+                </svg>
+                <span>Аналитика проекта</span></a
+              >
+            </li>
+            <li>
+              <div
+                class="dropdown"
+                data-expanded="false"
+                data-dropdown
+                data-visible="false"
+              >
+                <button
+                  class="dropdown__btn btn-reset"
+                  data-expanded="false"
+                  data-toggle
+                >
+                  <svg width="20" height="20">
+                    <use href="./img/svg/sprite.svg#tool_with_arrows"></use>
+                  </svg>
+                  <span>Позиции из Я.Вебмастера</span>
+                  <svg class="dropdown__btn-icon" width="16" height="16">
+                    <use href="./img/svg/sprite.svg#arrow_dropdown"></use>
+                  </svg>
+                </button>
+                <ul
+                  class="dropdown__submenu list-reset"
+                  data-expanded="false"
+                  data-submenu
+                >
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__link"
+                      ><span>Запросы Я.Вебмастер</span></a
+                    >
+                  </li>
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__link"
+                      ><span>URLs Я.Вебмастер</span></a
+                    >
+                  </li>
+                </ul>
+                <div class="dropdown__popup" data-expanded="false">
+                  <a href="#" class="dropdown__popup-link">Ключевые слова</a>
+                  <a href="#" class="dropdown__popup-link">URLs</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="menu-link" data-expanded="false"
+                ><svg width="20" height="20">
+                  <use href="./img/svg/sprite.svg#search_box"></use>
+                </svg>
+                <span>Съем позиций (Live/XML)</span></a
+              >
+            </li>
+          </ul>
+          <div class="divider"></div>
+          <a href="#" class="menu-link" data-expanded="false"
+            ><svg width="20" height="20">
+              <use href="./img/svg/sprite.svg#grid_view"></use>
+            </svg>
+            <span>Мои проекты</span></a
+          >
+        </div>
+      </div>
+      <div class="content">
+        <header class="header">
+          <div class="header__inner">
+            <div class="header__left">
+              <button class="burger btn-reset">
+                <svg width="16" height="12">
+                  <use href="./img/svg/sprite.svg#burger"></use>
+                </svg>
+              </button>
+              <div class="header__inner-wrapper">
+                <div class="project">
+                  <button class="project__btn btn-reset">
+                    <span>Проект 1</span>
+                    <svg class="project__btn-icon" width="16" height="16">
+                      <use href="./img/svg/sprite.svg#arrow_dropdown"></use>
+                    </svg>
+                  </button>
+                  <div class="project__dropdown-wrapper">
+                    <div class="project__dropdown">
+                      <div class="folder" data-dropdown data-visible="false">
+                        <button class="folder__btn btn-reset" data-toggle>
+                          <svg width="20" height="20">
+                            <use href="./img/svg/sprite.svg#folder"></use>
+                          </svg>
+                          <span>Папка 1</span>
+                        </button>
+                        <div class="folder__submenu" data-submenu>
+                          <button class="folder__select active btn-reset">
+                            <span>Проект 1</span>
+                            <svg
+                              class="folder__select-icon"
+                              width="16"
+                              height="16"
+                            >
+                              <use href="./img/svg/sprite.svg#link"></use>
+                            </svg>
+                          </button>
+                          <button class="folder__select btn-reset">
+                            <span>Проект 2</span>
+                            <svg
+                              class="folder__select-icon"
+                              width="16"
+                              height="16"
+                            >
+                              <use href="./img/svg/sprite.svg#link"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="folder" data-dropdown data-visible="false">
+                        <button class="folder__btn btn-reset" data-toggle>
+                          <svg width="20" height="20">
+                            <use href="./img/svg/sprite.svg#folder"></use>
+                          </svg>
+                          <span>Папка 1</span>
+                        </button>
+                        <div class="folder__submenu" data-submenu>
+                          <button
+                            class="folder__select btn-reset"
+                            data-selected="true"
+                          >
+                            <span>Проект 1</span>
+                            <svg
+                              class="folder__select-icon"
+                              width="16"
+                              height="16"
+                            >
+                              <use href="./img/svg/sprite.svg#link"></use>
+                            </svg>
+                          </button>
+                          <button class="folder__select btn-reset">
+                            <span>Проект 2</span>
+                            <svg
+                              class="folder__select-icon"
+                              width="16"
+                              height="16"
+                            >
+                              <use href="./img/svg/sprite.svg#link"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="folder__select btn-reset">
+                        <span>Проект 3</span>
+                        <svg class="folder__select-icon" width="16" height="16">
+                          <use href="./img/svg/sprite.svg#link"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="refresh">
+                  <button class="refresh__btn btn-reset">
+                    <svg width="24" height="24">
+                      <use href="./img/svg/sprite.svg#refresh"></use>
+                    </svg>
+                  </button>
+                  <span
+                    >Обновлено <span data-refresh-date>18.10.2024</span> в
+                    <span data-refresh-time>10:11</span></span
+                  >
+                </div>
+              </div>
+              <button class="btn btn-reset open-popup-new-poject">
+                <svg width="24" height="24">
+                  <use href="./img/svg/sprite.svg#add"></use>
+                </svg>
+                <span>Новый проект</span>
+              </button>
+            </div>
+            <div class="header__right">
+              <div class="user">
+                <button class="user__btn btn-reset">
+                  <svg width="24" height="24">
+                    <use href="./img/svg/sprite.svg#user"></use>
+                  </svg>
+                </button>
+                <div class="user__dropdown">
+                  <button class="action-btn btn-reset">
+                    <svg width="20" height="20">
+                      <use href="./img/svg/sprite.svg#settings"></use>
+                    </svg>
+                    <span>Настройки аккаунта</span>
+                  </button>
+                  <button class="action-btn btn-reset">
+                    <svg width="20" height="20">
+                      <use href="./img/svg/sprite.svg#key"></use>
+                    </svg>
+                    <span>Управление доступами</span>
+                  </button>
+                  <div class="divider"></div>
+                  <button class="action-btn btn-reset">
+                    <svg width="20" height="20">
+                      <use href="./img/svg/sprite.svg#move_item"></use>
+                    </svg>
+                    <span class="text-red">Выйти из аккаунта</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="wrapper">
+          <div class="box__body">
+            <div class="box__dates body-panel">
+         <div id="flatpickr-custom-container"></div>
+               <div class="input-wrap">
+                <input  id="input-search" type="text" class="input input--icon" placeholder="Начните вводить слово">
+                <label class="input-wrap-icon" for="input-search"></label>
+               </div>
+              <!-- <div class="box__choose-date" onclick="getPanel()">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask
+                    id="mask0_2003_82"
+                    style="mask-type: alpha"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="20"
+                    height="20"
+                  >
+                    <rect width="20" height="20" fill="#D9D9D9" />
+                  </mask>
+                  <g mask="url(#mask0_2003_82)">
+                    <path
+                      d="M5.41667 3.7H5.51667V3.6V2.1H6.92778V3.6V3.7H7.02778H13.4722H13.5722V3.6V2.1H14.9833V3.6V3.7H15.0833H15.8889C16.3054 3.7 16.6594 3.84615 16.9563 4.14096C17.2531 4.43574 17.4 4.78696 17.4 5.2V16.4C17.4 16.813 17.2531 17.1643 16.9563 17.459C16.6594 17.7539 16.3054 17.9 15.8889 17.9H4.61111C4.19456 17.9 3.84058 17.7539 3.54373 17.459C3.2469 17.1643 3.1 16.813 3.1 16.4V5.2C3.1 4.78696 3.2469 4.43574 3.54373 4.14096C3.84058 3.84615 4.19456 3.7 4.61111 3.7H5.41667ZM4.51111 16.4V16.5H4.61111H15.8889H15.9889V16.4V8.4V8.3H15.8889H4.61111H4.51111V8.4V16.4ZM4.51111 6.8V6.9H4.61111H15.8889H15.9889V6.8V5.2V5.1H15.8889H4.61111H4.51111V5.2V6.8ZM10.25 11.5C10.0467 11.5 9.88118 11.4328 9.74651 11.299C9.61187 11.1653 9.54444 11.0013 9.54444 10.8C9.54444 10.5987 9.61187 10.4347 9.74651 10.301C9.88118 10.1672 10.0467 10.1 10.25 10.1C10.4533 10.1 10.6188 10.1672 10.7535 10.301C10.8881 10.4347 10.9556 10.5987 10.9556 10.8C10.9556 11.0013 10.8881 11.1653 10.7535 11.299C10.6188 11.4328 10.4533 11.5 10.25 11.5ZM7.02778 11.5C6.8245 11.5 6.65896 11.4328 6.52428 11.299C6.38965 11.1653 6.32222 11.0013 6.32222 10.8C6.32222 10.5987 6.38965 10.4347 6.52429 10.301C6.65896 10.1672 6.8245 10.1 7.02778 10.1C7.23105 10.1 7.3966 10.1672 7.53127 10.301C7.6659 10.4347 7.73333 10.5987 7.73333 10.8C7.73333 11.0013 7.6659 11.1653 7.53127 11.299C7.3966 11.4328 7.23105 11.5 7.02778 11.5ZM13.4722 11.5C13.2689 11.5 13.1034 11.4328 12.9687 11.299C12.8341 11.1653 12.7667 11.0013 12.7667 10.8C12.7667 10.5987 12.8341 10.4347 12.9687 10.301C13.1034 10.1672 13.2689 10.1 13.4722 10.1C13.6755 10.1 13.841 10.1672 13.9757 10.301C14.1103 10.4347 14.1778 10.5987 14.1778 10.8C14.1778 11.0013 14.1103 11.1653 13.9757 11.299C13.841 11.4328 13.6755 11.5 13.4722 11.5ZM10.25 14.7C10.0467 14.7 9.88118 14.6328 9.74651 14.499C9.61187 14.3653 9.54444 14.2013 9.54444 14C9.54444 13.7987 9.61187 13.6347 9.74651 13.501C9.88118 13.3672 10.0467 13.3 10.25 13.3C10.4533 13.3 10.6188 13.3672 10.7535 13.501C10.8881 13.6347 10.9556 13.7987 10.9556 14C10.9556 14.2013 10.8881 14.3653 10.7535 14.499C10.6188 14.6328 10.4533 14.7 10.25 14.7ZM7.02778 14.7C6.8245 14.7 6.65896 14.6328 6.52429 14.499C6.38965 14.3653 6.32222 14.2013 6.32222 14C6.32222 13.7987 6.38965 13.6347 6.52429 13.501C6.65896 13.3672 6.8245 13.3 7.02778 13.3C7.23105 13.3 7.3966 13.3672 7.53127 13.501C7.6659 13.6347 7.73333 13.7987 7.73333 14C7.73333 14.2013 7.6659 14.3653 7.53127 14.499C7.3966 14.6328 7.23105 14.7 7.02778 14.7ZM13.4722 14.7C13.2689 14.7 13.1034 14.6328 12.9687 14.499C12.8341 14.3653 12.7667 14.2013 12.7667 14C12.7667 13.7987 12.8341 13.6347 12.9687 13.501C13.1034 13.3672 13.2689 13.3 13.4722 13.3C13.6755 13.3 13.841 13.3672 13.9757 13.501C14.1103 13.6347 14.1778 13.7987 14.1778 14C14.1778 14.2013 14.1103 14.3653 13.9757 14.499C13.841 14.6328 13.6755 14.7 13.4722 14.7Z"
+                      fill="#BBBBBB"
+                      stroke="white"
+                      stroke-width="0.2"
+                    />
+                  </g>
+                </svg>
+                <span class="box__chosed-date">Выберите дату</span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.5714 6C10.651 6 10.729 6.02069 10.7967 6.05974C10.8644 6.09879 10.9192 6.15467 10.9548 6.22111C10.9903 6.28756 11.0054 6.36194 10.9983 6.43592C10.9911 6.50991 10.962 6.58057 10.9143 6.64L8.34286 9.84C8.30294 9.88968 8.25117 9.93 8.19166 9.95777C8.13215 9.98554 8.06653 10 8 10C7.93347 10 7.86785 9.98554 7.80834 9.95777C7.74883 9.93 7.69706 9.88968 7.65714 9.84L5.08572 6.64C5.03796 6.58057 5.00888 6.50991 5.00173 6.43592C4.99458 6.36194 5.00965 6.28756 5.04525 6.22112C5.08084 6.15467 5.13555 6.09879 5.20326 6.05974C5.27096 6.02069 5.34898 6 5.42857 6L10.5714 6Z"
+                    fill="#747474"
+                  />
+                </svg>
+              </div> -->
+             
+             
+              <div class="date-dropdown">
+                <svg class="calendar-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_598_82" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                        <rect width="20" height="20" fill="#D9D9D9"></rect>
+                    </mask>
+                    <g mask="url(#mask0_598_82)">
+                        <path d="M5.41667 3.7H5.51667V3.6V2.1H6.92778V3.6V3.7H7.02778H13.4722H13.5722V3.6V2.1H14.9833V3.6V3.7H15.0833H15.8889C16.3054 3.7 16.6594 3.84615 16.9563 4.14096C17.2531 4.43574 17.4 4.78696 17.4 5.2V16.4C17.4 16.813 17.2531 17.1643 16.9563 17.459C16.6594 17.7539 16.3054 17.9 15.8889 17.9H4.61111C4.19456 17.9 3.84058 17.7539 3.54373 17.459C3.2469 17.1643 3.1 16.813 3.1 16.4V5.2C3.1 4.78696 3.2469 4.43574 3.54373 4.14096C3.84058 3.84615 4.19456 3.7 4.61111 3.7H5.41667ZM4.51111 16.4V16.5H4.61111H15.8889H15.9889V16.4V8.4V8.3H15.8889H4.61111H4.51111V8.4V16.4ZM4.51111 6.8V6.9H4.61111H15.8889H15.9889V6.8V5.2V5.1H15.8889H4.61111H4.51111V5.2V6.8ZM10.25 11.5C10.0467 11.5 9.88118 11.4328 9.74651 11.299C9.61187 11.1653 9.54444 11.0013 9.54444 10.8C9.54444 10.5987 9.61187 10.4347 9.74651 10.301C9.88118 10.1672 10.0467 10.1 10.25 10.1C10.4533 10.1 10.6188 10.1672 10.7535 10.301C10.8881 10.4347 10.9556 10.5987 10.9556 10.8C10.9556 11.0013 10.8881 11.1653 10.7535 11.299C10.6188 11.4328 10.4533 11.5 10.25 11.5ZM7.02778 11.5C6.8245 11.5 6.65896 11.4328 6.52428 11.299C6.38965 11.1653 6.32222 11.0013 6.32222 10.8C6.32222 10.5987 6.38965 10.4347 6.52429 10.301C6.65896 10.1672 6.8245 10.1 7.02778 10.1C7.23105 10.1 7.3966 10.1672 7.53127 10.301C7.6659 10.4347 7.73333 10.5987 7.73333 10.8C7.73333 11.0013 7.6659 11.1653 7.53127 11.299C7.3966 11.4328 7.23105 11.5 7.02778 11.5ZM13.4722 11.5C13.2689 11.5 13.1034 11.4328 12.9687 11.299C12.8341 11.1653 12.7667 11.0013 12.7667 10.8C12.7667 10.5987 12.8341 10.4347 12.9687 10.301C13.1034 10.1672 13.2689 10.1 13.4722 10.1C13.6755 10.1 13.841 10.1672 13.9757 10.301C14.1103 10.4347 14.1778 10.5987 14.1778 10.8C14.1778 11.0013 14.1103 11.1653 13.9757 11.299C13.841 11.4328 13.6755 11.5 13.4722 11.5ZM10.25 14.7C10.0467 14.7 9.88118 14.6328 9.74651 14.499C9.61187 14.3653 9.54444 14.2013 9.54444 14C9.54444 13.7987 9.61187 13.6347 9.74651 13.501C9.88118 13.3672 10.0467 13.3 10.25 13.3C10.4533 13.3 10.6188 13.3672 10.7535 13.501C10.8881 13.6347 10.9556 13.7987 10.9556 14C10.9556 14.2013 10.8881 14.3653 10.7535 14.499C10.6188 14.6328 10.4533 14.7 10.25 14.7ZM7.02778 14.7C6.8245 14.7 6.65896 14.6328 6.52429 14.499C6.38965 14.3653 6.32222 14.2013 6.32222 14C6.32222 13.7987 6.38965 13.6347 6.52429 13.501C6.65896 13.3672 6.8245 13.3 7.02778 13.3C7.23105 13.3 7.3966 13.3672 7.53127 13.501C7.6659 13.6347 7.73333 13.7987 7.73333 14C7.73333 14.2013 7.6659 14.3653 7.53127 14.499C7.3966 14.6328 7.23105 14.7 7.02778 14.7ZM13.4722 14.7C13.2689 14.7 13.1034 14.6328 12.9687 14.499C12.8341 14.3653 12.7667 14.2013 12.7667 14C12.7667 13.7987 12.8341 13.6347 12.9687 13.501C13.1034 13.3672 13.2689 13.3 13.4722 13.3C13.6755 13.3 13.841 13.3672 13.9757 13.501C14.1103 13.6347 14.1778 13.7987 14.1778 14C14.1778 14.2013 14.1103 14.3653 13.9757 14.499C13.841 14.6328 13.6755 14.7 13.4722 14.7Z" fill="#BBBBBB" stroke="white" stroke-width="0.2"></path>
+                    </g>
+                </svg>
+                <input type="text" id="datepicker" placeholder="Выберите диапазон" class="flatpickr-input active" readonly="readonly">
+                <svg class="arrow-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.5714 6C10.651 6 10.729 6.02069 10.7967 6.05974C10.8644 6.09879 10.9192 6.15467 10.9548 6.22111C10.9903 6.28756 11.0054 6.36194 10.9983 6.43592C10.9911 6.50991 10.962 6.58057 10.9143 6.64L8.34286 9.84C8.30294 9.88968 8.25117 9.93 8.19166 9.95777C8.13215 9.98554 8.06653 10 8 10C7.93347 10 7.86785 9.98554 7.80834 9.95777C7.74883 9.93 7.69706 9.88968 7.65714 9.84L5.08572 6.64C5.03796 6.58057 5.00888 6.50991 5.00173 6.43592C4.99458 6.36194 5.00965 6.28756 5.04525 6.22112C5.08084 6.15467 5.13555 6.09879 5.20326 6.05974C5.27096 6.02069 5.34898 6 5.42857 6L10.5714 6Z" fill="#747474"></path>
+                </svg>
+            </div>
+             
+             
+              <div class="body-panel__download">          
+                <button class="body-panel-download__btn btn-reset">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 18.15H18.15V18V15.15H19.85V18C19.85 19.0172 19.0172 19.85 18 19.85H6C4.98284 19.85 4.15 19.0172 4.15 18V15.15H5.85V18V18.15H6H18ZM12.85 7.83V15.85H11.15V7.83V7.46886L10.8941 7.72373L8.4102 10.1981L7.21213 9L12 4.21213L16.7879 9L15.5898 10.1981L13.1059 7.72373L12.85 7.46886V7.83Z" fill="#0076F5" stroke="white" stroke-width="0.3" />
+                  </svg>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.5714 6C10.651 6 10.729 6.02069 10.7967 6.05974C10.8644 6.09879 10.9192 6.15467 10.9548 6.22111C10.9903 6.28756 11.0054 6.36194 10.9983 6.43592C10.9911 6.50991 10.962 6.58057 10.9143 6.64L8.34286 9.84C8.30294 9.88968 8.25117 9.93 8.19166 9.95777C8.13215 9.98554 8.06653 10 8 10C7.93347 10 7.86785 9.98554 7.80834 9.95777C7.74883 9.93 7.69706 9.88968 7.65714 9.84L5.08572 6.64C5.03796 6.58057 5.00888 6.50991 5.00173 6.43592C4.99458 6.36194 5.00965 6.28756 5.04525 6.22112C5.08084 6.15467 5.13555 6.09879 5.20326 6.05974C5.27096 6.02069 5.34898 6 5.42857 6L10.5714 6Z" fill="#0076F5" />
+                  </svg>
+                </button>
+                <div class="project__dropdown-wrapper">
+                  <div class="project__dropdown">
+                    <div class="folder" >
+                      <button class="folder__btn btn-reset" data-toggle>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M13.1429 16.7692V18H2V2H9.42857M9.42857 2V5.69231H13.1429M9.42857 2H10.0476L13.1429 5.07692V5.69231M13.1429 5.69231V7.53846" stroke="#404040" stroke-width="1.2" stroke-linejoin="round" />
+                          <path d="M14.9994 9.38477L13.1423 11.8463M11.2852 14.3078L13.1423 11.8463M13.1423 11.8463L11.2852 9.38477M13.1423 11.8463L14.9994 14.3078" stroke="#404040" stroke-width="1.2" stroke-linecap="square" />
+                        </svg>
+                        <span>XLSX</span>
+                      </button>
+                    </div>
+                    <div class="folder" >
+                      <button class="folder__btn btn-reset" data-toggle>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8.2 9.38462H5.72C5.55557 9.38462 5.39787 9.44945 5.28159 9.56486C5.16532 9.68026 5.1 9.83679 5.1 10V13.6923C5.1 13.8555 5.16532 14.012 5.28159 14.1275C5.39787 14.2429 5.55557 14.3077 5.72 14.3077H8.2M12.54 9.38462H10.06C9.89557 9.38462 9.73787 9.44945 9.62159 9.56486C9.50532 9.68026 9.44 9.83679 9.44 10V11.2308C9.44 11.394 9.50532 11.5505 9.62159 11.6659C9.73787 11.7813 9.89557 11.8462 10.06 11.8462H11.3C11.4644 11.8462 11.6221 11.911 11.7384 12.0264C11.8547 12.1418 11.92 12.2983 11.92 12.4615V13.6923C11.92 13.8555 11.8547 14.012 11.7384 14.1275C11.6221 14.2429 11.4644 14.3077 11.3 14.3077H8.82M13.78 8.76923C13.78 9.38462 15.02 14.3077 15.02 14.3077H16.26C16.26 14.3077 17.5 9.38462 17.5 8.76923M13.16 16.7692V18H2V2H9.44M9.44 2V5.69231H13.16M9.44 2H10.06L13.16 5.07692V5.69231M13.16 5.69231V7.53846" stroke="#404040" stroke-width="1.2" stroke-linejoin="round" />
+                        </svg>
+                        <span>CSV</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="body-panel__settings">
+                <button class="settings-button btn-reset">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_2044_9118" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                      <rect width="20" height="20" fill="#D9D9D9" />
+                    </mask>
+                    <g mask="url(#mask0_2044_9118)">
+                      <path d="M3.65278 6.44444V6.56944H3.77778H16.2222H16.3472V6.44444V3.77778V3.65278H16.2222H3.77778H3.65278V3.77778V6.44444ZM6.125 8.22222V8.09722H6H3.77778H3.65278V8.22222V16.2222V16.3472H3.77778H6H6.125V16.2222V8.22222ZM14 8.09722H13.875V8.22222V16.2222V16.3472H14H16.2222H16.3472V16.2222V8.22222V8.09722H16.2222H14ZM12.3472 8.22222V8.09722H12.2222H7.77778H7.65278V8.22222V16.2222V16.3472H7.77778H12.2222H12.3472V16.2222V8.22222ZM16.2222 17.875H3.77778C3.3223 17.875 2.9355 17.7143 2.61061 17.3894C2.28572 17.0645 2.125 16.6777 2.125 16.2222V3.77778C2.125 3.3223 2.28572 2.9355 2.61061 2.61061C2.9355 2.28572 3.3223 2.125 3.77778 2.125H16.2222C16.6777 2.125 17.0645 2.28572 17.3894 2.61061C17.7143 2.9355 17.875 3.3223 17.875 3.77778V16.2222C17.875 16.6777 17.7143 17.0645 17.3894 17.3894C17.0645 17.7143 16.6777 17.875 16.2222 17.875Z" fill="#404040" stroke="#F7F7F7" stroke-width="0.25" />
+                    </g>
+                  </svg>
+                  <span>Настройки</span>
+                </button>
+                <div class="project__dropdown-wrapper">
+                  <div class="settings">
+                    <div class="settings__hide">     
+                      <div class="checkbox-wrap">
+                        <label
+                        for="checkbox-hide"
+                        class="checkbox"
+                        >
+                        <input type="checkbox" role="switch" id="checkbox-hide"/>
+                          <span>Скрыть дни без данных</span>
+                        </label>
+                      </div>   
+                    </div>
+                    <div class="settings__cut">
+                      <label
+                      for="light-switch"
+                      class="gui-switch gui-switch-popup"
+                      >
+                      <input type="checkbox" role="switch" id="light-switch" class="pop-variable"/>
+                      <span>Сокращенный вид</span>
+                     </label>                  
+                    </div>
+                    <div class="settings__summ">
+                      <label
+                      for="light-switch"
+                      class="gui-switch gui-switch-popup"
+                    >
+                      <input type="checkbox" role="switch" id="light-switch" class="pop-variable"/>
+                      <span>Вычислить суммы</span>
+                    </label>
+                    </div>
+                    <div class="settings__graphic">
+                      <div class="checkbox-wrap">
+                        <label
+                        for="checkbox-graphic"
+                        class="checkbox"
+                        >
+                        <input type="checkbox" role="switch" id="checkbox-graphic"/>
+                          <span>Показать график</span>
+                        </label>
+                      </div>   
+                    </div>
+                    <button class="btn btn-reset">Применить</button>
+                  </div>
+                  <div class="body-panel__delete">
+                    <span>Очистить данные за </span>
+                    <input type="text" class="input body-panel--input" placeholder="1">
+                    <span>дней</span>
+                  </div>
+                  <button class="delete-button btn-reset">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <mask id="mask0_171_2911" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                        <rect width="24" height="24" fill="#D9D9D9" />
+                      </mask>
+                      <g mask="url(#mask0_171_2911)">
+                        <path d="M5.975 6.66667V6.56667H5.875H5.1V4.98889H9.375H9.475V4.88889V4.1H14.525V4.88889V4.98889H14.625H18.9V6.56667H18.125H18.025V6.66667V18.2222C18.025 18.6849 17.864 19.0782 17.5397 19.4076C17.2154 19.737 16.829 19.9 16.375 19.9H7.625C7.171 19.9 6.78456 19.737 6.46033 19.4076C6.13605 19.0782 5.975 18.6849 5.975 18.2222V6.66667ZM16.475 6.66667V6.56667H16.375H7.625H7.525V6.66667V18.2222V18.3222H7.625H16.375H16.475V18.2222V6.66667ZM11.025 8.54444V16.3444H9.475V8.54444H11.025ZM14.525 8.54444V16.3444H12.975V8.54444H14.525Z" fill="#E50C00" stroke="#FDF4F4" stroke-width="0.2" />
+                      </g>
+                    </svg>
+                    <span>Удалить</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+    <!-- Подключаем собранный файл -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+    <script src="datePicker.js"></script>
+       
+
+
+
+            <div
+            class="flatpickr-calendar rangeMode animate multiMonth"
+            tabindex="-1"
+            style="width: 747px"
+          >
+            <div class="custom-date-range-menu">
+              <div class="separator-line"></div>
+              <ul>
+                <li data-range="today">Сегодня</li>
+                <li data-range="yesterday">Вчера</li>
+                <li data-range="last7">Последние 7 дней</li>
+                <li data-range="last30">Последние 30 дней</li>
+                <li data-range="last90">Последние 90 дней</li>
+                <li data-range="start">От начала работы</li>
+              </ul>
+              <div class="separator-line2"></div>
+              <div class="button-container">
+                <button class="apply-button">Применить</button>
+                <button class="cancel-button">Отменить</button>
+              </div>
+            </div>
+            <div class="calendar-content-wrapper">
+              <div class="flatpickr-months">
+                <span class="flatpickr-prev-month"
+                  ><svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="#747474"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <mask
+                      id="mask0_598_861"
+                      style="mask-type: alpha"
+                      maskUnits="userSpaceOnUse"
+                      x="0"
+                      y="0"
+                      width="20"
+                      height="20"
+                    >
+                      <rect width="20" height="20" fill="#D9D9D9"></rect>
+                    </mask>
+                    <g mask="url(#mask0_598_861)">
+                      <path
+                        d="M16.287 5.41998L9.7585 11.8935L9.65108 12L9.7585 12.1065L16.287 18.58L15.0679 19.7887L7.21303 12L15.0679 4.21123L16.287 5.41998Z"
+                        fill="#747474"
+                        stroke="white"
+                        stroke-width="0.3"
+                      ></path>
+                    </g>
+                  </svg>
+                </span>
+                <div class="flatpickr-month">
+                  <div class="flatpickr-current-month">
+                    <span class="cur-month">Сентябрь </span>
+                    <div class="numInputWrapper">
+                      <input
+                        class="numInput cur-year"
+                        type="number"
+                        tabindex="-1"
+                        aria-label="Год"
+                      /><span class="arrowUp"></span><span class="arrowDown"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flatpickr-month">
+                  <div class="flatpickr-current-month">
+                    <span class="cur-month">Октябрь </span>
+                    <div class="numInputWrapper">
+                      <input
+                        class="numInput cur-year"
+                        type="number"
+                        tabindex="-1"
+                        aria-label="Год"
+                      /><span class="arrowUp"></span><span class="arrowDown"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flatpickr-month">
+                  <div class="flatpickr-current-month">
+                    <span class="cur-month">Ноябрь </span>
+                    <div class="numInputWrapper">
+                      <input
+                        class="numInput cur-year"
+                        type="number"
+                        tabindex="-1"
+                        aria-label="Год"
+                      /><span class="arrowUp"></span><span class="arrowDown"></span>
+                    </div>
+                  </div>
+                </div>
+                <span class="flatpickr-next-month"
+                  ><svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="#747474"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <mask
+                      id="mask0_598_865"
+                      style="mask-type: alpha"
+                      maskUnits="userSpaceOnUse"
+                      x="0"
+                      y="0"
+                      width="20"
+                      height="20"
+                    >
+                      <rect width="20" height="20" fill="#D9D9D9"></rect>
+                    </mask>
+                    <g mask="url(#mask0_598_865)">
+                      <path
+                        d="M7.21303 5.41998L13.7415 11.8935L13.8489 12L13.7415 12.1065L7.21304 18.58L8.43206 19.7887L16.287 12L8.43206 4.21123L7.21303 5.41998Z"
+                        fill="#747474"
+                        stroke="white"
+                        stroke-width="0.3"
+                      ></path>
+                    </g>
+                  </svg>
+                </span>
+              </div>
+              <div class="flatpickr-innerContainer">
+                <div class="flatpickr-rContainer">
+                  <div class="flatpickr-weekdays">
+                    <div class="flatpickr-weekdaycontainer">
+                      <span class="flatpickr-weekday"> Пн</span
+                      ><span class="flatpickr-weekday">Вт</span
+                      ><span class="flatpickr-weekday">Ср</span
+                      ><span class="flatpickr-weekday">Чт</span
+                      ><span class="flatpickr-weekday">Пт</span
+                      ><span class="flatpickr-weekday">Сб</span
+                      ><span class="flatpickr-weekday">Вс </span>
+                    </div>
+                    <div class="flatpickr-weekdaycontainer">
+                      <span class="flatpickr-weekday"> Пн</span
+                      ><span class="flatpickr-weekday">Вт</span
+                      ><span class="flatpickr-weekday">Ср</span
+                      ><span class="flatpickr-weekday">Чт</span
+                      ><span class="flatpickr-weekday">Пт</span
+                      ><span class="flatpickr-weekday">Сб</span
+                      ><span class="flatpickr-weekday">Вс </span>
+                    </div>
+                    <div class="flatpickr-weekdaycontainer">
+                      <span class="flatpickr-weekday"> Пн</span
+                      ><span class="flatpickr-weekday">Вт</span
+                      ><span class="flatpickr-weekday">Ср</span
+                      ><span class="flatpickr-weekday">Чт</span
+                      ><span class="flatpickr-weekday">Пт</span
+                      ><span class="flatpickr-weekday">Сб</span
+                      ><span class="flatpickr-weekday">Вс </span>
+                    </div>
+                  </div>
+                  <div class="flatpickr-days" tabindex="-1" style="width: 747px">
+                    <div class="dayContainer">
+                      <span
+                        class="flatpickr-day prevMonthDay hidden"
+                        aria-label="Август 26, 2024"
+                        tabindex="-1"
+                        >26</span
+                      ><span
+                        class="flatpickr-day prevMonthDay hidden"
+                        aria-label="Август 27, 2024"
+                        tabindex="-1"
+                        >27</span
+                      ><span
+                        class="flatpickr-day prevMonthDay hidden"
+                        aria-label="Август 28, 2024"
+                        tabindex="-1"
+                        >28</span
+                      ><span
+                        class="flatpickr-day prevMonthDay hidden"
+                        aria-label="Август 29, 2024"
+                        tabindex="-1"
+                        >29</span
+                      ><span
+                        class="flatpickr-day prevMonthDay hidden"
+                        aria-label="Август 30, 2024"
+                        tabindex="-1"
+                        >30</span
+                      ><span
+                        class="flatpickr-day prevMonthDay hidden"
+                        aria-label="Август 31, 2024"
+                        tabindex="-1"
+                        >31</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 1, 2024"
+                        tabindex="-1"
+                        >1</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 2, 2024"
+                        tabindex="-1"
+                        >2</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 3, 2024"
+                        tabindex="-1"
+                        >3</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 4, 2024"
+                        tabindex="-1"
+                        >4</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 5, 2024"
+                        tabindex="-1"
+                        >5</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 6, 2024"
+                        tabindex="-1"
+                        >6</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 7, 2024"
+                        tabindex="-1"
+                        >7</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 8, 2024"
+                        tabindex="-1"
+                        >8</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 9, 2024"
+                        tabindex="-1"
+                        >9</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 10, 2024"
+                        tabindex="-1"
+                        >10</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 11, 2024"
+                        tabindex="-1"
+                        >11</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 12, 2024"
+                        tabindex="-1"
+                        >12</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 13, 2024"
+                        tabindex="-1"
+                        >13</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 14, 2024"
+                        tabindex="-1"
+                        >14</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 15, 2024"
+                        tabindex="-1"
+                        >15</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 16, 2024"
+                        tabindex="-1"
+                        >16</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 17, 2024"
+                        tabindex="-1"
+                        >17</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 18, 2024"
+                        tabindex="-1"
+                        >18</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 19, 2024"
+                        tabindex="-1"
+                        >19</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 20, 2024"
+                        tabindex="-1"
+                        >20</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 21, 2024"
+                        tabindex="-1"
+                        >21</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 22, 2024"
+                        tabindex="-1"
+                        >22</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 23, 2024"
+                        tabindex="-1"
+                        >23</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 24, 2024"
+                        tabindex="-1"
+                        >24</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 25, 2024"
+                        tabindex="-1"
+                        >25</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 26, 2024"
+                        tabindex="-1"
+                        >26</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 27, 2024"
+                        tabindex="-1"
+                        >27</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 28, 2024"
+                        tabindex="-1"
+                        >28</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 29, 2024"
+                        tabindex="-1"
+                        >29</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Сентябрь 30, 2024"
+                        tabindex="-1"
+                        >30</span
+                      ><span
+                        class="flatpickr-day nextMonthDay hidden"
+                        aria-label="Октябрь 1, 2024"
+                        tabindex="-1"
+                        >1</span
+                      ><span
+                        class="flatpickr-day nextMonthDay hidden"
+                        aria-label="Октябрь 2, 2024"
+                        tabindex="-1"
+                        >2</span
+                      ><span
+                        class="flatpickr-day nextMonthDay hidden"
+                        aria-label="Октябрь 3, 2024"
+                        tabindex="-1"
+                        >3</span
+                      ><span
+                        class="flatpickr-day nextMonthDay hidden"
+                        aria-label="Октябрь 4, 2024"
+                        tabindex="-1"
+                        >4</span
+                      ><span
+                        class="flatpickr-day nextMonthDay hidden"
+                        aria-label="Октябрь 5, 2024"
+                        tabindex="-1"
+                        >5</span
+                      ><span
+                        class="flatpickr-day nextMonthDay hidden"
+                        aria-label="Октябрь 6, 2024"
+                        tabindex="-1"
+                        >6</span
+                      >
+                    </div>
+                    <div class="dayContainer">
+                      <span
+                        class="flatpickr-day prevMonthDay hidden"
+                        aria-label="Сентябрь 30, 2024"
+                        tabindex="-1"
+                        >30</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 1, 2024"
+                        tabindex="-1"
+                        >1</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 2, 2024"
+                        tabindex="-1"
+                        >2</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 3, 2024"
+                        tabindex="-1"
+                        >3</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 4, 2024"
+                        tabindex="-1"
+                        >4</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 5, 2024"
+                        tabindex="-1"
+                        >5</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 6, 2024"
+                        tabindex="-1"
+                        >6</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 7, 2024"
+                        tabindex="-1"
+                        >7</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 8, 2024"
+                        tabindex="-1"
+                        >8</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 9, 2024"
+                        tabindex="-1"
+                        >9</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 10, 2024"
+                        tabindex="-1"
+                        >10</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 11, 2024"
+                        tabindex="-1"
+                        >11</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 12, 2024"
+                        tabindex="-1"
+                        >12</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 13, 2024"
+                        tabindex="-1"
+                        >13</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 14, 2024"
+                        tabindex="-1"
+                        >14</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 15, 2024"
+                        tabindex="-1"
+                        >15</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 16, 2024"
+                        tabindex="-1"
+                        >16</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 17, 2024"
+                        tabindex="-1"
+                        >17</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 18, 2024"
+                        tabindex="-1"
+                        >18</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 19, 2024"
+                        tabindex="-1"
+                        >19</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 20, 2024"
+                        tabindex="-1"
+                        >20</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 21, 2024"
+                        tabindex="-1"
+                        >21</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 22, 2024"
+                        tabindex="-1"
+                        >22</span
+                      ><span
+                        class="flatpickr-day today"
+                        aria-label="Октябрь 23, 2024"
+                        aria-current="date"
+                        tabindex="-1"
+                        >23</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 24, 2024"
+                        tabindex="-1"
+                        >24</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 25, 2024"
+                        tabindex="-1"
+                        >25</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 26, 2024"
+                        tabindex="-1"
+                        >26</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 27, 2024"
+                        tabindex="-1"
+                        >27</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 28, 2024"
+                        tabindex="-1"
+                        >28</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 29, 2024"
+                        tabindex="-1"
+                        >29</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 30, 2024"
+                        tabindex="-1"
+                        >30</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Октябрь 31, 2024"
+                        tabindex="-1"
+                        >31</span
+                      ><span
+                        class="flatpickr-day nextMonthDay hidden"
+                        aria-label="Ноябрь 1, 2024"
+                        tabindex="-1"
+                        >1</span
+                      ><span
+                        class="flatpickr-day nextMonthDay hidden"
+                        aria-label="Ноябрь 2, 2024"
+                        tabindex="-1"
+                        >2</span
+                      ><span
+                        class="flatpickr-day nextMonthDay hidden"
+                        aria-label="Ноябрь 3, 2024"
+                        tabindex="-1"
+                        >3</span
+                      >
+                    </div>
+                    <div class="dayContainer">
+                      <span
+                        class="flatpickr-day prevMonthDay hidden"
+                        aria-label="Октябрь 28, 2024"
+                        tabindex="-1"
+                        >28</span
+                      ><span
+                        class="flatpickr-day prevMonthDay hidden"
+                        aria-label="Октябрь 29, 2024"
+                        tabindex="-1"
+                        >29</span
+                      ><span
+                        class="flatpickr-day prevMonthDay hidden"
+                        aria-label="Октябрь 30, 2024"
+                        tabindex="-1"
+                        >30</span
+                      ><span
+                        class="flatpickr-day prevMonthDay hidden"
+                        aria-label="Октябрь 31, 2024"
+                        tabindex="-1"
+                        >31</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 1, 2024"
+                        tabindex="-1"
+                        >1</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 2, 2024"
+                        tabindex="-1"
+                        >2</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 3, 2024"
+                        tabindex="-1"
+                        >3</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 4, 2024"
+                        tabindex="-1"
+                        >4</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 5, 2024"
+                        tabindex="-1"
+                        >5</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 6, 2024"
+                        tabindex="-1"
+                        >6</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 7, 2024"
+                        tabindex="-1"
+                        >7</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 8, 2024"
+                        tabindex="-1"
+                        >8</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 9, 2024"
+                        tabindex="-1"
+                        >9</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 10, 2024"
+                        tabindex="-1"
+                        >10</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 11, 2024"
+                        tabindex="-1"
+                        >11</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 12, 2024"
+                        tabindex="-1"
+                        >12</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 13, 2024"
+                        tabindex="-1"
+                        >13</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 14, 2024"
+                        tabindex="-1"
+                        >14</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 15, 2024"
+                        tabindex="-1"
+                        >15</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 16, 2024"
+                        tabindex="-1"
+                        >16</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 17, 2024"
+                        tabindex="-1"
+                        >17</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 18, 2024"
+                        tabindex="-1"
+                        >18</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 19, 2024"
+                        tabindex="-1"
+                        >19</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 20, 2024"
+                        tabindex="-1"
+                        >20</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 21, 2024"
+                        tabindex="-1"
+                        >21</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 22, 2024"
+                        tabindex="-1"
+                        >22</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 23, 2024"
+                        tabindex="-1"
+                        >23</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 24, 2024"
+                        tabindex="-1"
+                        >24</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 25, 2024"
+                        tabindex="-1"
+                        >25</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 26, 2024"
+                        tabindex="-1"
+                        >26</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 27, 2024"
+                        tabindex="-1"
+                        >27</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 28, 2024"
+                        tabindex="-1"
+                        >28</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 29, 2024"
+                        tabindex="-1"
+                        >29</span
+                      ><span
+                        class="flatpickr-day"
+                        aria-label="Ноябрь 30, 2024"
+                        tabindex="-1"
+                        >30</span
+                      ><span
+                        class="flatpickr-day nextMonthDay hidden"
+                        aria-label="Декабрь 1, 2024"
+                        tabindex="-1"
+                        >1</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+            <!-- <div class="date-choose">
+              <div class="date-choose__menu">
+                <div class="date-choose__items">
+                  <div class="date-choose__item today">Сегодня</div>
+                  <div class="date-choose__item yesterday">Вчера</div>
+                  <div class="date-choose__item last-7">Последние 7 дней</div>
+                  <div class="date-choose__item last-30">Последние 30 дней</div>
+                  <div class="date-choose__item last-90">Последние 90 дней</div>
+                  <div class="date-choose__item beginning">
+                    От начала работы
+                  </div>
+                </div>
+                <div class="date-choose__buttons">
+                  <div class="date-choose__add blue-button blue-button--mr">
+                    Применить
+                  </div>
+                  <div class="date-choose__back transparent-button">
+                    Отменить
+                  </div>
+                </div>
+              </div>       
+              <div class="date" id="root"></div>
+            </div> -->
+          </div>
+          <div class="positions">
+            <div class="positions__header">
+
+            </div>
+            <div class="positions__items">
+              <div class="positions__item">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bundle.js"></script>
+    <script src="sideHead.js"></script>
+
+
+ 
+  </body>
+</html>

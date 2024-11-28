@@ -1,0 +1,23 @@
+version: "3.0"
+volumes:
+    postgres:
+services:
+  db:
+    container_name: "db-scraping"
+    image: postgres:13-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=postgres
+    ports:
+      - "5484:5432"
+    networks:
+      - custom
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+networks:
+  custom:
+    driver: bridge
+
